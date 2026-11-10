@@ -43,7 +43,7 @@
 | # | Sesión | Conceptos | Componentes | Estado |
 |---|---|---|---|---|
 | 1 | Hola Cami en la OLED | Placa, core, librerías, UART, I2C | LILYGO | ✅ 09/11 |
-| 2 | Pinout y salidas digitales | GPIO, HIGH/LOW, 3,3 V, pines reservados de la placa, `delay()` vs `millis()`, por qué un LED necesita resistencia, código de colores | LED integrado + LED externo con resistencia en protoboard | |
+| 2 | Pinout y salidas digitales | GPIO, HIGH/LOW, 3,3 V, pines reservados de la placa, `delay()` vs `millis()`, por qué un LED necesita resistencia, código de colores | LED integrado + LED externo con resistencia en protoboard | ✅ 10/11 (falta `millis()`) |
 | 3 | Entradas digitales | Pull-up / pull-down, pin flotante, rebote | Cable puente a GND | |
 | 4 | Entradas analógicas (ADC) | Conversión analógico-digital, 12 bits, ADC1 vs ADC2 (el ADC2 no funciona con WiFi) | YL-38 + sonda | |
 
@@ -101,4 +101,5 @@
 - [x] LEDs sueltos: sí. Pulsadores: no (sesión 3 con cable puente).
 - [ ] Recuperar el multímetro.
 - [x] Cables para los Arduino ✅
-- [ ] Identificar el valor de las resistencias (código de colores, en la sesión 2).
+- [ ] Identificar el valor de las resistencias: por colores, probablemente de 220 Ω (rojo-rojo-negro-negro-marrón). Confirmar con el multímetro.
+- [ ] La LILYGO no tiene pines soldados: por ahora uso cables **macho/macho**. (Opcional) Soldar tiras de pines.
