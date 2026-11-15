@@ -46,7 +46,11 @@ Antes de proponer cualquier conexión, **leé la ficha de la placa** en `placas/
 
 ## Fotos
 
-En Claude Code no se pueden subir fotos, así que Cami las comparte en el chat de claude.ai. Cuando haya una foto, sugerí el nombre y la carpeta donde guardarla (`imagenes/sesion-NN/descripcion.jpeg`) para que la bitácora la enlace bien.
+Claude Code puede ver fotos: Cami las arrastra a la ventana o, mejor, te pasa la ruta del archivo. El flujo preferido es que guarde la foto primero en su carpeta definitiva (`imagenes/sesion-NN/descripcion.jpeg`) y te diga "mirá `imagenes/sesion-NN/...`". Así la foto ya queda donde la bitácora la va a enlazar y lista para el commit.
+
+- Si te pasa una foto que todavía no está en `imagenes/`, sugerí el nombre y la carpeta donde guardarla.
+- Cuando el circuito esté armado, una foto sirve para **verificar las conexiones contra la tabla del plan antes de subir el código**: fijate en qué número y letra de la protoboard está cada cable y cada pata, y si algo no coincide, decilo.
+- Pegar con Ctrl+V en Windows a veces no funciona; arrastrar o dar la ruta siempre funciona.
 
 ## Diagramas de conexiones
 

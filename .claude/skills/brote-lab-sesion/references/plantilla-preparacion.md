@@ -31,6 +31,7 @@ Tabla de conexiones + recorrido eléctrico (ver "Diagramas" en SKILL.md).
 ## 5. Pasos
 1. ...
 (Cada paso con su porqué. El código va después de entender qué va a pasar en el hardware.)
+(Con el circuito armado y antes de subir el código: foto de la protoboard en `imagenes/sesion-NN/` para verificar las conexiones.)
 
 ## 6. Listo cuando
 Qué tiene que verse o medirse para dar el objetivo por cumplido.

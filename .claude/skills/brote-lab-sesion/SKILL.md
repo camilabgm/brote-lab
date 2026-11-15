@@ -55,6 +55,8 @@ El objetivo es que Cami llegue a la protoboard sabiendo qué va a conectar, dón
 
 Mientras dure la sesión vale lo del `CLAUDE.md`: anatomía primero, el porqué antes del código, un concepto nuevo, cortar si aparece la frustración.
 
+**Verificación con foto:** cuando Cami termine de armar el circuito y antes de subir el código, pedile una foto de la protoboard (guardada en `imagenes/sesion-NN/` y pasada por ruta). Compará cable por cable contra la tabla de conexiones: número y letra de cada punta, orientación de los componentes con polaridad, que ninguna pieza tenga las dos patas en el mismo grupo. Un cable corrido un agujero es el error más común y el más difícil de ver desde el código.
+
 ---
 
 ## Flujo C — Cerrar una sesión
@@ -72,7 +74,7 @@ Mientras dure la sesión vale lo del `CLAUDE.md`: anatomía primero, el porqué 
    - `cronograma.md`: estado de la sesión en `✅ DD/MM`, y lo que haya quedado sin ver entre paréntesis (por ejemplo `✅ 10/11 (falta millis())`). Marcá los *Pendientes de confirmar* que se hayan resuelto. Si cambió el inventario, actualizalo.
    - `README.md`: agregá la fila de la sesión con los enlaces a la bitácora y al firmware.
    - `placas/<placa>.md`: agregá al *Historial de uso* los pines usados y para qué. Si se descubrió algo nuevo de la placa (un pin que no anda, una maña del IDE), sumalo a la ficha. Así la ficha crece con cada sesión.
-4. **Fotos:** si Cami compartió fotos en el chat, recordale guardarlas en `imagenes/sesion-NN/` con los nombres que usa la bitácora.
+4. **Fotos:** revisá que las fotos de la sesión estén en `imagenes/sesion-NN/` con los nombres que enlaza la bitácora. Si alguna se pasó por fuera (arrastrada a Code o compartida en el chat) y no está guardada, recordale guardarla ahí.
 5. **Git:** mostrá la lista de archivos que cambiaron y proponé el mensaje de commit con este estilo: `Sesión NN: tema (resumen corto de lo logrado)`. **No hagas commit, push ni merge** hasta que Cami lo diga. Cuando lo diga, el orden es commit en la rama de la sesión → merge a `main` → push.
 
 ---
