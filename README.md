@@ -9,11 +9,16 @@ Placa principal: **LILYGO T3 V1.6.1** (ESP32-PICO-D4 + LoRa SX1278 433 MHz + OLE
 
 ```
 brote-lab/
+├── CLAUDE.md       ← cómo trabajo, para que Claude Code arranque con contexto
+├── .claude/skills/ ← skill brote-lab-sesion: preparar, cerrar sesiones y dar de alta placas
 ├── cronograma.md   ← plan de sesiones, inventario y pendientes
+├── placas/         ← una ficha por placa (pines reservados, libres, historial) + datasheets/
 ├── bitacora/       ← una nota por sesión: AAAA-MM-DD-sesion-NN.md
 ├── firmware/       ← un sketch por sesión: NNN-Placa-descripcion/
 └── imagenes/       ← fotos de circuitos (sesion-NN/) y del fabricante
 ```
+
+Ficha de la placa principal: [placas/lilygo-t3-v1.6.1.md](placas/lilygo-t3-v1.6.1.md)
 
 ## Sesiones
 
