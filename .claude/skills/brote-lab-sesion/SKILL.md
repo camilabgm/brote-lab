@@ -16,7 +16,7 @@ El repo `brote-lab` es la única fuente de verdad (`github.com/camilabgm/brote-l
 - **En Claude Code, o con la carpeta del repo conectada:** leé y escribí los archivos directamente.
 - **En un chat sin acceso de escritura al repo:** leé los archivos desde el proyecto (sincronizado con GitHub). Entregá cada archivo nuevo o modificado completo, con su ruta exacta, listo para que Cami lo pegue o lo pase a Code. Decí qué archivos cambian.
 
-**El proyecto puede estar atrasado.** La sincronización del proyecto con GitHub no es automática: solo se actualiza cuando Cami aprieta **Sync now**. En un chat, antes de usar el cronograma, la ficha de la placa o la última bitácora, compará el último commit de `main` en GitHub con lo que muestra el proyecto (por ejemplo, si la última sesión con ✅ del cronograma coincide). El repo es público, así que se puede leer directo de GitHub sin permisos. Si no coinciden, avisale a Cami y trabajá con la versión de GitHub, no con la del proyecto.
+**El proyecto puede estar atrasado.** La sincronización del proyecto con GitHub no es confiable que sea automática: se actualiza al apretar **Sincronizar ahora** (paso 6 del cierre), y si ese paso no se hizo, queda atrasado. En un chat, antes de usar el cronograma, la ficha de la placa o la última bitácora, compará el último commit de `main` en GitHub con lo que muestra el proyecto (por ejemplo, si la última sesión con ✅ del cronograma coincide). El repo es público, así que se puede leer directo de GitHub sin permisos. Si no coinciden, avisale a Cami y trabajá con la versión de GitHub, no con la del proyecto.
 
 Archivos que usa la skill:
 
@@ -78,7 +78,10 @@ Mientras dure la sesión vale lo del `CLAUDE.md`: anatomía primero, el porqué 
    - `placas/<placa>.md`: agregá al *Historial de uso* los pines usados y para qué. Si se descubrió algo nuevo de la placa (un pin que no anda, una maña del IDE), sumalo a la ficha. Así la ficha crece con cada sesión.
 4. **Fotos:** revisá que las fotos de la sesión estén en `imagenes/sesion-NN/` con los nombres que enlaza la bitácora. Si alguna se pasó por fuera (arrastrada a Code o compartida en el chat) y no está guardada, recordale guardarla ahí.
 5. **Git:** mostrá la lista de archivos que cambiaron y proponé el mensaje de commit con este estilo: `Sesión NN: tema (resumen corto de lo logrado)`. **No hagas commit, push ni merge** hasta que Cami lo diga. Cuando lo diga, el orden es commit en la rama de la sesión → merge a `main` → push.
-6. **Sincronizar el proyecto:** después del push, recordale a Cami que apriete **Sync now** en el proyecto Brote Lab de claude.ai (sección de conocimiento, al lado del repo). Sin eso, los chats del proyecto siguen viendo la versión anterior.
+6. **Sincronizar el proyecto:** después del push, sincronizalo vos desde el navegador integrado de la app (en Claude Code). Sin esto, los chats del proyecto siguen viendo la versión anterior.
+   - Abrí `https://claude.ai/projects` → proyecto **Brote Lab** → sección **Contexto** → en la fila de `camilabgm/brote-lab`, menú **⋯** → **Sincronizar ahora**.
+   - Esperá a que pase de *Sincronizando...* a **Sincronizado · ahora** y decile a Cami que quedó hecho.
+   - Si claude.ai pide iniciar sesión, pedile a Cami que entre ella (la contraseña y los códigos los pone ella) y seguí cuando avise. Si no se puede (por ejemplo, en un chat sin navegador), recordale que apriete **Sincronizar ahora** ella.
 
 ---
 

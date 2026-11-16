@@ -8,7 +8,7 @@ Este es el laboratorio personal de **Cami** (Ing. Camila Guerrero, Ingeniera en 
 
 ## Dónde está cada cosa
 
-Este repo es la **única fuente de verdad**. El proyecto de claude.ai lee estos mismos archivos desde GitHub, así que cualquier cambio se hace acá. Ojo: el proyecto **no se sincroniza solo**; se actualiza cuando Cami aprieta **Sync now**. Después de cada push, recordáselo.
+Este repo es la **única fuente de verdad**. El proyecto de claude.ai lee estos mismos archivos desde GitHub, así que cualquier cambio se hace acá. Ojo: no hay que contar con que el proyecto se sincronice solo. **Después de cada push, sincronizalo vos** desde el navegador integrado: proyecto Brote Lab → **Contexto** → menú **⋯** del repo → **Sincronizar ahora** (detalle en el paso 6 del cierre de la skill). Si claude.ai pide iniciar sesión, pedile a Cami que entre; si no hay navegador, recordale que lo haga ella.
 
 | Ruta | Qué tiene |
 |---|---|
