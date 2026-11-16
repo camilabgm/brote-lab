@@ -15,7 +15,7 @@ brote-lab/
 ├── placas/         ← una ficha por placa (pines reservados, libres, historial) + datasheets/
 ├── bitacora/       ← una nota por sesión: AAAA-MM-DD-sesion-NN.md
 ├── firmware/       ← un sketch por sesión: NNN-Placa-descripcion/
-└── imagenes/       ← fotos de circuitos (sesion-NN/) y del fabricante
+└── imagenes/       ← fotos de circuitos (sesion-NN/); las del fabricante van en placas/datasheets/
 ```
 
 Ficha de la placa principal: [placas/lilygo-t3-v1.6.1.md](placas/lilygo-t3-v1.6.1.md)
