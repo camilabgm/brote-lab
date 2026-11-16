@@ -39,3 +39,5 @@ El plan completo está en [cronograma.md](cronograma.md).
 - Arduino IDE 2.x + core ESP32 de Espressif (v3.3.12)
 - Placa en el IDE: **TTGO LoRa32-OLED**, revisión **TTGO LoRa32 V2.1 (1.6.1)**
 - Librerías: Adafruit SSD1306, Adafruit GFX
+
+<!-- Prueba de Sync now del proyecto de claude.ai: 2026-11-15 -->
