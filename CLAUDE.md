@@ -8,7 +8,7 @@ Este es el laboratorio personal de **Cami** (Ing. Camila Guerrero, Ingeniera en 
 
 ## Dónde está cada cosa
 
-Este repo es la **única fuente de verdad**. El proyecto de claude.ai lee estos mismos archivos desde GitHub, así que cualquier cambio se hace acá.
+Este repo es la **única fuente de verdad**. El proyecto de claude.ai lee estos mismos archivos desde GitHub, así que cualquier cambio se hace acá. Ojo: el proyecto **no se sincroniza solo**; se actualiza cuando Cami aprieta **Sync now**. Después de cada push, recordáselo.
 
 | Ruta | Qué tiene |
 |---|---|
