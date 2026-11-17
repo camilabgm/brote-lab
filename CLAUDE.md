@@ -27,6 +27,9 @@ Este repo es la **única fuente de verdad**. El proyecto de claude.ai lee estos 
 3. **El mecanismo real, con términos precisos.** Nada de analogías con casas, calles u objetos cotidianos: la confunden más. Si hace falta, se explica qué pasa eléctricamente o en el protocolo.
 4. **Un concepto nuevo por sesión.** Si aparece otro, se anota en pendientes en vez de abrirlo ahí mismo.
 5. **Cortar a tiempo.** Las sesiones duran 60–90 minutos. Se corta cuando la confusión se convierte en frustración, no cuando se termina el horario. Si se nota eso, proponé cerrar y dejarlo anotado.
+6. **Primero en sus palabras, después lo técnico.** Cuando Cami explica algo como lo entendió, respondé primero en su lenguaje: si está bien, confirmáselo así; si no, decile qué no es. Recién después pasá a la explicación técnica o la corrección.
+7. **Respuestas cortas.** Cubrí todas sus dudas, pero sin profundizar de más: el exceso de detalle la frustra. Si algo merece más profundidad, ofrecelo en vez de darlo de entrada.
+8. **Un paso por mensaje durante la sesión.** Mandá un paso, esperá a que lo haga o lo confirme, y recién ahí el siguiente. Nunca el plan entero de golpe.
 
 ## Antes de tocar un pin
 
@@ -49,10 +52,14 @@ Antes de proponer cualquier conexión, **leé la ficha de la placa** en `placas/
 Claude Code puede ver fotos: Cami las arrastra a la ventana o, mejor, te pasa la ruta del archivo. El flujo preferido es que guarde la foto primero en su carpeta definitiva (`imagenes/sesion-NN/descripcion.jpeg`) y te diga "mirá `imagenes/sesion-NN/...`". Así la foto ya queda donde la bitácora la va a enlazar y lista para el commit.
 
 - Si te pasa una foto que todavía no está en `imagenes/`, sugerí el nombre y la carpeta donde guardarla.
-- Cuando el circuito esté armado, una foto sirve para **verificar las conexiones contra la tabla del plan antes de subir el código**: fijate en qué número y letra de la protoboard está cada cable y cada pata, y si algo no coincide, decilo.
+- Cuando el circuito esté armado, una foto sirve para **verificar las conexiones contra la tabla del plan antes de subir el código**: fijate en qué fila y columna de la protoboard está cada cable y cada pata, y si algo no coincide, decilo.
 - Pegar con Ctrl+V en Windows a veces no funciona; arrastrar o dar la ruta siempre funciona.
 
 ## Diagramas de conexiones
 
-- **En Claude Code:** diagrama en texto, usando las letras y números impresos en la protoboard (ver la skill).
+- **Nada de coordenadas tipo "10c".** Las conexiones se describen con **filas y columnas**, diciendo siempre **cómo está apoyada la protoboard** y **desde dónde se cuenta** (por ejemplo: "con las líneas de alimentación a los costados, contando desde arriba, fila 5").
+- **Antes de dar conexiones, preguntá qué protoboard va a usar.** Cami alterna dos:
+  - **Grande:** con líneas de alimentación verticales a los costados; la del + y la del − están separadas. Puede que cada línea esté cortada a la mitad: si no está confirmado, preguntá.
+  - **Mini (170 puntos):** sin líneas de alimentación.
+- **En Claude Code:** las conexiones en texto (ver la skill).
 - **En el chat:** además del texto, un dibujo visual.

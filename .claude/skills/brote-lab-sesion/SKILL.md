@@ -51,13 +51,13 @@ El objetivo es que Cami llegue a la protoboard sabiendo qué va a conectar, dón
 2. **Leé la ficha de la placa** que se va a usar. Si no existe, hacé antes el Flujo A.
 3. **Revisá los materiales** contra el inventario y contra *Pendientes de confirmar*. Avisá claramente si falta algo o si hay algo sin confirmar que afecta la sesión (un multímetro prestado, una resistencia de valor dudoso, una frecuencia sin verificar). Proponé una alternativa si existe.
 4. **Elegí los pines.** Cada pin propuesto se valida contra la ficha: tiene que estar libre, ser apto para lo que se va a hacer (entrada, salida, analógico, con o sin pull-up interno) y no ser especial al arrancar. Explicá en una línea por qué ese pin y no otro. Preferí reutilizar pines que ya funcionaron en sesiones anteriores, salvo que la sesión necesite otro tipo de pin.
-5. **Dibujá las conexiones** (ver *Diagramas* más abajo).
-6. **Entregá el plan** con la plantilla de `references/plantilla-preparacion.md`.
+5. **Preguntá qué protoboard va a usar** (la grande o la mini) antes de describir conexiones (ver *Diagramas* más abajo).
+6. **Entregá el plan como un resumen corto** con la plantilla de `references/plantilla-preparacion.md`: objetivo, concepto, materiales y pines. **Los pasos no van en el resumen:** se mandan de a uno durante la sesión, y cada uno espera la confirmación de Cami antes del siguiente. Las conexiones se dan en el paso en que se arma el circuito.
 7. **Rama de Git:** proponé `sesion-NN-descripcion` (dos dígitos, descripción corta en minúsculas con guiones, como `sesion-02-salidas-digitales`). En Code, ofrecé crearla y esperá la confirmación antes de ejecutar.
 
-Mientras dure la sesión vale lo del `CLAUDE.md`: anatomía primero, el porqué antes del código, un concepto nuevo, cortar si aparece la frustración.
+Mientras dure la sesión vale lo del `CLAUDE.md`: anatomía primero, el porqué antes del código, un concepto nuevo, primero en sus palabras y después lo técnico, respuestas cortas, **un paso por mensaje**, cortar si aparece la frustración.
 
-**Verificación con foto:** cuando Cami termine de armar el circuito y antes de subir el código, pedile una foto de la protoboard (guardada en `imagenes/sesion-NN/` y pasada por ruta). Compará cable por cable contra la tabla de conexiones: número y letra de cada punta, orientación de los componentes con polaridad, que ninguna pieza tenga las dos patas en el mismo grupo. Un cable corrido un agujero es el error más común y el más difícil de ver desde el código.
+**Verificación con foto:** cuando Cami termine de armar el circuito y antes de subir el código, pedile una foto de la protoboard (guardada en `imagenes/sesion-NN/` y pasada por ruta). Compará cable por cable contra las conexiones del paso: fila y columna de cada punta, orientación de los componentes con polaridad, que ninguna pieza tenga las dos patas en el mismo grupo. Un cable corrido un agujero es el error más común y el más difícil de ver desde el código.
 
 ---
 
@@ -87,27 +87,34 @@ Mientras dure la sesión vale lo del `CLAUDE.md`: anatomía primero, el porqué 
 
 ## Diagramas de conexiones
 
-Los diagramas existen para que Cami pueda armar el circuito sin interpretar. Por eso usan **las letras y números impresos en la protoboard**, nunca "fila" o "columna" a secas, que dependen de cómo esté girada.
+Los diagramas existen para que Cami pueda armar el circuito sin interpretar. **No uses coordenadas tipo "10c"** (las letras y números impresos): a Cami no le sirven. Describí las conexiones con **filas y columnas**, siempre con un punto de partida explícito.
 
-Recordatorio de la mecánica (mini protoboard de 170 puntos): cada grupo de 5 agujeros perpendicular al canal central está unido por dentro (por ejemplo, `10a–10e` es un solo nodo eléctrico, y `10f–10j` es otro). Las dos patas de un mismo componente nunca van en el mismo grupo. Dos componentes que se conectan entre sí comparten grupo.
+**Primero, qué protoboard.** Cami alterna dos; preguntá cuál va a usar antes de describir nada:
 
-**En Claude Code**, dos partes en texto:
+- **Grande:** a los costados tiene **líneas de alimentación verticales**. Cada línea es una tira de metal continua por dentro, y la del + y la del − están separadas entre sí (Cami lo comprobó). En algunas protoboards grandes cada línea está cortada a la mitad: si no está confirmado, preguntá.
+- **Mini (170 puntos):** sin líneas de alimentación.
 
-1. Una tabla de conexiones, en el orden en que se arman:
+**Después, la orientación y el punto de partida.** Antes de la primera conexión, fijá cómo está apoyada la protoboard (por ejemplo: "con el canal del medio vertical, las líneas de alimentación a los costados") y desde dónde se cuenta ("contando las filas desde arriba"). Usá siempre la misma referencia en toda la sesión.
+
+**La mecánica, en esos términos** (con el canal del medio vertical): de cada lado del canal central, los agujeros de una misma fila (los que van del canal al borde) están unidos por dentro y forman un solo nodo eléctrico. Los dos lados del canal no están unidos entre sí. Las dos patas de un mismo componente nunca van en la misma fila del mismo lado. Dos componentes que se conectan entre sí comparten fila.
+
+**En Claude Code**, dos partes en texto, dentro del paso en que se arma el circuito:
+
+1. Las conexiones en el orden en que se arman, cada una con fila, lado del canal y para qué:
 
    | # | Desde | Hasta | Cable / componente | Nota |
    |---|---|---|---|---|
-   | 1 | Placa IO4 | 10a | Dupont M/M | Pin libre según la ficha |
-   | 2 | 10c | 14c | Resistencia 220 Ω | Sin polaridad |
-   | 3 | 14d | 16d | LED (largo en 14d, corto en 16d) | Pata larga = ánodo (+) |
-   | 4 | 16a | Placa GND | Dupont M/M | Cierra el circuito |
+   | 1 | Placa IO4 | Fila 5, lado izquierdo | Dupont M/M | Pin libre según la ficha |
+   | 2 | Fila 5, lado izquierdo | Fila 9, lado izquierdo | Resistencia 220 Ω | Sin polaridad |
+   | 3 | Fila 9, lado izquierdo | Fila 11, lado izquierdo | LED (largo en la 9, corto en la 11) | Pata larga = ánodo (+) |
+   | 4 | Fila 11, lado izquierdo | Placa GND | Dupont M/M | Cierra el circuito |
 
 2. Un recorrido del camino eléctrico en una línea, para verificar que el circuito cierra:
 
    ```
-   IO4 → [10] → resistencia → [14] → LED (+ → −) → [16] → GND
+   IO4 → fila 5 → resistencia → fila 9 → LED (+ → −) → fila 11 → GND
    ```
 
 **En el chat**, además del texto, un dibujo visual de la protoboard con los mismos números.
 
-Antes de entregar cualquier diagrama, verificá: que ningún componente tenga las dos patas en el mismo grupo, que el circuito vuelva a GND, que los componentes con polaridad estén orientados y que ningún GPIO del ESP32 reciba 5 V.
+Antes de entregar cualquier diagrama, verificá: que ningún componente tenga las dos patas en la misma fila del mismo lado, que el circuito vuelva a GND, que los componentes con polaridad estén orientados y que ningún GPIO del ESP32 reciba 5 V.
