@@ -32,7 +32,7 @@
 | Regulador AMS1117 | — | 5 V → 3,3 V | |
 | Porta-batería 18650 | — | 3,7 V / salida USB 5 V | |
 | Protoboards, cables dupont (M/H, H/M), resistencias | — | — | Valor de las resistencias desconocido |
-| LEDs sueltos | — | — | Sin pulsadores |
+| LEDs sueltos | — | — | Sin pulsadores (conseguir uno para el rebote) |
 | Multímetro | — | — | Prestado, por recuperar |
 | **Pendiente de compra** | Mini bomba 3–5 V + relé 1 canal compatible con 3,3 V | | La tienda los tendría esta semana |
 
@@ -44,7 +44,7 @@
 |---|---|---|---|---|
 | 1 | Hola Cami en la OLED | Placa, core, librerías, UART, I2C | LILYGO | ✅ 09/11 |
 | 2 | Pinout y salidas digitales | GPIO, HIGH/LOW, 3,3 V, pines reservados de la placa, `delay()` vs `millis()`, por qué un LED necesita resistencia, código de colores | LED integrado + LED externo con resistencia en protoboard | ✅ 10/11 (falta `millis()`) |
-| 3 | Entradas digitales | Pull-up / pull-down, pin flotante, rebote | Cable puente a GND | |
+| 3 | Entradas digitales | Pull-up / pull-down, pin flotante, rebote | Cable puente a GND | ✅ 17/11 (rebote y antirrebote: falta, con pulsador) |
 | 4 | Entradas analógicas (ADC) | Conversión analógico-digital, 12 bits, ADC1 vs ADC2 (el ADC2 no funciona con WiFi) | YL-38 + sonda | |
 
 ## Módulo 2 — Sensores (corazón de Brote #001)
@@ -102,4 +102,5 @@
 - [ ] Recuperar el multímetro.
 - [x] Cables para los Arduino ✅
 - [ ] Identificar el valor de las resistencias: por colores, probablemente de 220 Ω (rojo-rojo-negro-negro-marrón). Confirmar con el multímetro.
-- [ ] La LILYGO no tiene pines soldados: por ahora uso cables **macho/macho**. (Opcional) Soldar tiras de pines.
+- [x] La LILYGO ya tiene los pines soldados: de la placa a la protoboard van cables **hembra/macho** ✅
+- [ ] Conseguir un pulsador para ver el rebote y hacer el antirrebote con `millis()`.

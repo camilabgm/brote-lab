@@ -26,6 +26,7 @@ Ficha de la placa principal: [placas/lilygo-t3-v1.6.1.md](placas/lilygo-t3-v1.6.
 |---|---|---|---|
 | 1 | Hola Cami en la OLED | [2026-11-09](bitacora/2026-11-09-sesion-01.md) | [001-LilyGo-imprimirnombre](firmware/001-LilyGo-imprimirnombre/) |
 | 2 | Pinout y salidas digitales | [2026-11-10](bitacora/2026-11-10-sesion-02.md) | [002-LilyGo-parpadeo](firmware/002-LilyGo-parpadeo/) |
+| 3 | Entradas digitales | [2026-11-17](bitacora/2026-11-17-sesion-03.md) | [003-LilyGo-entradas](firmware/003-LilyGo-entradas/) |
 
 El plan completo está en [cronograma.md](cronograma.md).
 

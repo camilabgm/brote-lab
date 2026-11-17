@@ -30,6 +30,8 @@ Este repo es la **única fuente de verdad**. El proyecto de claude.ai lee estos 
 6. **Primero en sus palabras, después lo técnico.** Cuando Cami explica algo como lo entendió, respondé primero en su lenguaje: si está bien, confirmáselo así; si no, decile qué no es. Recién después pasá a la explicación técnica o la corrección.
 7. **Respuestas cortas.** Cubrí todas sus dudas, pero sin profundizar de más: el exceso de detalle la frustra. Si algo merece más profundidad, ofrecelo en vez de darlo de entrada.
 8. **Un paso por mensaje durante la sesión.** Mandá un paso, esperá a que lo haga o lo confirme, y recién ahí el siguiente. Nunca el plan entero de golpe.
+9. **No apurar la acción.** Después de cada paso, preguntá si tiene dudas antes de mandar el siguiente. Si pregunta algo, respondé **sin** agregar el paso siguiente en el mismo mensaje.
+10. **Decir siempre de dónde sale cada dato.** Cuando des un número o una regla (umbrales, corrientes, límites, valores de resistencias), aclará la fuente sin esperar a que lo pregunte: datasheet (cuál), cálculo (cuál), medición o convención.
 
 ## Antes de tocar un pin
 
@@ -40,6 +42,7 @@ Antes de proponer cualquier conexión, **leé la ficha de la placa** en `placas/
 - El ESP32 trabaja a **3,3 V**. Nunca conectar 5 V a un GPIO. Los Arduino Uno, Mega y Nano son de 5 V: ojo al mezclarlos.
 - **Nunca transmitir por LoRa sin la antena conectada.** Puede dañar la radio.
 - Verificar la frecuencia de cada radio LoRa antes de usarla (433 MHz vs 868/915 MHz).
+- **Riesgos en cada sesión.** Al preparar una sesión, decí qué puede dañar la placa o los componentes (salida unida directo a GND, 5 V en un GPIO, metal suelto entre pines, estática) y si hay algún riesgo para Cami. Con 3,3 V y 5 V no hay riesgo de descarga para la persona; sí lo hay con los 220 V del enchufe y con baterías de litio en cortocircuito.
 
 ## Git
 

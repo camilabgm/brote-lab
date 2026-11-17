@@ -26,7 +26,9 @@
 | Conector JST de batería | Batería de litio de 3,7 V (cargador incorporado) | — | — |
 | Switch ON/OFF y botón RST | Encender/apagar y reiniciar el programa | — | — |
 
-Los agujeros del borde vienen **sin pines soldados**: para la protoboard se usan cables dupont **macho/macho**.
+De fábrica, los agujeros del borde vienen **sin pines soldados**. **Mi placa ya tiene los pines soldados** (desde la sesión 03): de la placa a la protoboard se usan cables dupont **hembra/macho** (la hembra en el pin de la placa y el macho en la protoboard).
+
+**Entradas digitales** (dato del datasheet del ESP32): lee 1 por encima de 0,75 × 3,3 ≈ 2,5 V y 0 por debajo de 0,25 × 3,3 ≈ 0,8 V; entre los dos no hay garantía. Pull-up y pull-down internos de ~45 kΩ.
 
 ## 2. Pines que salen al borde
 
@@ -75,7 +77,7 @@ Según la serigrafía de la placa (vista de frente, con la antena abajo):
 
 | Pin | Capacidades | Uso recomendado | Probado |
 |---|---|---|---|
-| 4 | Digital entrada/salida, pull-up interno, ADC2, táctil | **Todo lo digital:** LEDs, entradas, DHT22 | ✅ Sesión 02 (salida, LED externo) |
+| 4 | Digital entrada/salida, pull-up interno, ADC2, táctil | **Todo lo digital:** LEDs, entradas, DHT22 | ✅ Sesión 02 (salida, LED externo), ✅ sesión 03 (entrada con `INPUT_PULLUP`) |
 | 34 | Solo entrada, ADC1, sin pull-up interno | **Sensores analógicos** | |
 | 36 (S_VP) | Solo entrada, ADC1, sin pull-up interno | **Sensores analógicos** | |
 | 39 (S_VN) | Solo entrada, ADC1, sin pull-up interno | **Sensores analógicos** | |
@@ -91,6 +93,8 @@ Con un solo pin digital libre, si una sesión necesita dos salidas digitales, la
 | 01 | 21, 22 | OLED por I2C ("Hola Cami") | ✅ |
 | 02 | 25 | LED integrado, salida digital | ✅ |
 | 02 | 4 | LED externo con resistencia de 220 Ω en protoboard | ✅ |
+| 03 | 4 | Entrada con `INPUT_PULLUP` + 220 Ω de protección, cable a GND | ✅ lee 1 en reposo y 0 con el cable a GND |
+| 03 | 25 | LED integrado como indicador de la lectura | ✅ |
 
 ## 7. Mañas y errores conocidos
 
@@ -100,5 +104,7 @@ Con un solo pin digital libre, si una sesión necesita dos salidas digitales, la
 | `setupSDCard FAIL` en el Serial Monitor | Sigue corriendo la demo de fábrica: el programa no se subió | Subir con **Upload (→)** |
 | `unable to open ftdi device` | Se apretó **Debug**: busca un depurador JTAG que no hay | **Upload (→)** o **Ctrl + U** |
 | `Failed uploading: no upload port provided` | No hay puerto elegido | **Tools → Port → COM7** |
-| Componente externo que no responde | Cable dupont **hembra** en la protoboard: no hace contacto | Cables **macho/macho** |
+| Componente externo que no responde | Cable dupont **hembra** en la protoboard: no hace contacto | En la protoboard siempre la punta **macho** (cables H/M desde los pines de la placa) |
+| El resultado no coincide con el código recién guardado | La subida no terminó y sigue corriendo el programa anterior | Volver a subir y esperar **"Hard resetting via RTS pin..."** |
+| Un pin parece roto o desaparece al poner la hembra | El pin se **hundió** en su base de plástico | Volver a subirlo. Al enchufar la hembra, sostener la placa |
 | Caracteres raros en el Serial Monitor | Velocidad distinta en el código y en el monitor | Las dos en **115200** |
